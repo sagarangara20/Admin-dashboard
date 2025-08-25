@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!-- Line 1 -->
+<html lang="en"> <!-- Line 2 -->
+<head> <!-- Line 3 -->
+  <meta charset="UTF-8"> <!-- Line 4 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Line 5 -->
+  <title>Dashboard</title> <!-- Line 6 -->
+  <link rel="stylesheet" href="style.css"> <!-- Line 7 -->
+</head> <!-- Line 8 -->
+<body> <!-- Line 9 -->
+  <header> <!-- Line 10 -->
+    <nav aria-label="Main Navigation"> <!-- Line 11 -->
+      <a href="index.html" class="logo">MyDashboard</a> <!-- Line 12 -->
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button> <!-- Line 13 -->
+      <ul id="menu"> <!-- Line 14 -->
+        <li><a href="index.html">Home</a></li> <!-- Line 15 -->
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li> <!-- Line 16 -->
+        <li><a href="reports.html">Reports</a></li> <!-- Line 17 -->
+      </ul> <!-- Line 18 -->
+    </nav> <!-- Line 19 -->
+  </header> <!-- Line 20 -->
+
+  <main> <!-- Line 21 -->
+    <h1>Dashboard</h1> <!-- Line 22 -->
+    <p>Here is where the admin can manage data and view stats.</p> <!-- Line 23 -->
+  </main> <!-- Line 24 -->
+
+  <footer> <!-- Line 25 -->
+    <p>&copy; 2025 Admin Dashboard.</p> <!-- Line 26 -->
+  </footer> <!-- Line 27 -->
+
+  <script src="script.js"></script> <!-- Line 28 -->
+</body> <!-- Line 29 -->
+</html> <!-- Line 30 -->
