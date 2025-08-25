@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Admin Dashboard showcasing navigation, responsiveness, and accessibility.">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <nav aria-label="Main Navigation">
-      <a href="index.html" class="logo">MyDashboard</a>
-      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
-      <ul id="menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="reports.html">Reports</a></li>
-      </ul>
-    </nav>
-  </header>
+* { margin: 0; padding: 0; box-sizing: border-box; } /* Line 1 */
+body { font-family: Arial, sans-serif; line-height: 1.6; } /* Line 2 */
 
-  <main>
-    <h1>Welcome to the Admin Dashboard</h1>
-    <p>This page demonstrates <strong>navigation</strong>, <strong>responsiveness</strong>, and <strong>accessibility compliance</strong>.</p>
-    <img src="https://via.placeholder.com/600x300" alt="Dashboard Preview Image">
-  </main>
+header { background: #333; color: #fff; } /* Line 3 */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; } /* Line 4 */
+nav .logo { font-size: 1.5rem; color: #fff; text-decoration: none; } /* Line 5 */
+nav ul { display: flex; list-style: none; } /* Line 6 */
+nav ul li { margin-left: 20px; } /* Line 7 */
+nav ul li a { color: #fff; text-decoration: none; } /* Line 8 */
+.menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: #fff; } /* Line 9 */
 
-  <footer>
-    <p>&copy; 2025 Admin Dashboard. All rights reserved.</p>
-  </footer>
+main { padding: 20px; text-align: center; } /* Line 10 */
+main img { max-width: 100%; height: auto; margin-top: 20px; } /* Line 11 */
 
-  <script src="script.js"></script>
-</body>
-</html>
+footer { background: #222; color: #fff; text-align: center; padding: 10px; margin-top: 20px; } /* Line 12 */
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) { /* Line 13 */
+  nav ul { display: none; flex-direction: column; background: #444; width: 100%; text-align: center; } /* Line 14 */
+  nav ul li { margin: 10px 0; } /* Line 15 */
+  .menu-toggle { display: block; } /* Line 16 */
+  nav ul.show { display: flex; } /* Line 17 */
+}
