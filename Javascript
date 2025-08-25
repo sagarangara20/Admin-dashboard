@@ -1,0 +1,35 @@
+<!DOCTYPE html> <!-- Line 1 -->
+<html lang="en"> <!-- Line 2 -->
+<head> <!-- Line 3 -->
+  <meta charset="UTF-8"> <!-- Line 4 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Line 5 -->
+  <meta name="description" content="Admin Dashboard showcasing navigation, responsiveness, and accessibility."> <!-- Line 6 -->
+  <title>Admin Dashboard</title> <!-- Line 7 -->
+  <link rel="stylesheet" href="style.css"> <!-- Line 8 -->
+</head> <!-- Line 9 -->
+<body> <!-- Line 10 -->
+  <header> <!-- Line 11 -->
+    <nav aria-label="Main Navigation"> <!-- Line 12 -->
+      <a href="index.html" class="logo">MyDashboard</a> <!-- Line 13 -->
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button> <!-- Line 14 -->
+      <ul id="menu"> <!-- Line 15 -->
+        <li><a href="index.html" aria-current="page">Home</a></li> <!-- Line 16 -->
+        <li><a href="dashboard.html">Dashboard</a></li> <!-- Line 17 -->
+        <li><a href="reports.html">Reports</a></li> <!-- Line 18 -->
+      </ul> <!-- Line 19 -->
+    </nav> <!-- Line 20 -->
+  </header> <!-- Line 21 -->
+
+  <main> <!-- Line 22 -->
+    <h1>Welcome to the Admin Dashboard</h1> <!-- Line 23 -->
+    <p>This page demonstrates <strong>navigation</strong>, <strong>responsiveness</strong>, and <strong>accessibility compliance</strong>.</p> <!-- Line 24 -->
+    <img src="https://via.placeholder.com/600x300" alt="Dashboard Preview Image"> <!-- Line 25 -->
+  </main> <!-- Line 26 -->
+
+  <footer> <!-- Line 27 -->
+    <p>&copy; 2025 Admin Dashboard. All rights reserved.</p> <!-- Line 28 -->
+  </footer> <!-- Line 29 -->
+
+  <script src="script.js"></script> <!-- Line 30 -->
+</body> <!-- Line 31 -->
+</html> <!-- Line 32 -->
