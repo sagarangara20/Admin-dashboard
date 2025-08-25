@@ -1,90 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard – Attendance & Marks</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body{font-family:system-ui,Arial,sans-serif;margin:20px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-    .card{padding:16px;border:1px solid #ddd;border-radius:12px}
-    canvas{max-height:360px}
-  </style>
-</head>
-<body>
-  <header>
-    <h2>Admin Dashboard</h2>
-    <small>Dynamic charts with Chart.js</small>
-  </header>
-  <div class="grid">
-    <div class="card">
-      <h3>Monthly Attendance (%)</h3>
-      <canvas id="attendanceChart"></canvas>
-    </div>
-    <div class="card">
-      <h3>Average Marks by Subject</h3>
-      <canvas id="marksChart"></canvas>
-    </div>
-  </div>
-  <script>
-    async function loadJSON(url, fallback){
-      try{
-        const r = await fetch(url);
-        if(!r.ok) throw new Error("bad status");
-        return await r.json();
-      }catch(e){
-        console.warn(Using fallback for ${url}:, e);
-        return fallback;
-      }
-    }
+<!DOCTYPE html> <!-- Line 1 -->
+<html lang="en"> <!-- Line 2 -->
+<head> <!-- Line 3 -->
+  <meta charset="UTF-8"> <!-- Line 4 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Line 5 -->
+  <meta name="description" content="Admin Dashboard showcasing navigation, responsiveness, and accessibility."> <!-- Line 6 -->
+  <title>Admin Dashboard</title> <!-- Line 7 -->
+  <link rel="stylesheet" href="style.css"> <!-- Line 8 -->
+</head> <!-- Line 9 -->
+<body> <!-- Line 10 -->
+  <header> <!-- Line 11 -->
+    <nav aria-label="Main Navigation"> <!-- Line 12 -->
+      <a href="index.html" class="logo">MyDashboard</a> <!-- Line 13 -->
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button> <!-- Line 14 -->
+      <ul id="menu"> <!-- Line 15 -->
+        <li><a href="index.html" aria-current="page">Home</a></li> <!-- Line 16 -->
+        <li><a href="dashboard.html">Dashboard</a></li> <!-- Line 17 -->
+        <li><a href="reports.html">Reports</a></li> <!-- Line 18 -->
+      </ul> <!-- Line 19 -->
+    </nav> <!-- Line 20 -->
+  </header> <!-- Line 21 -->
 
-    // Fallback data (used when no backend is running)
-    const attendanceFallback = {
-      labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-      data:   [92,88,90,95,91,89,93,94,90,92,91,96]
-    };
-    const marksFallback = {
-      labels: ["Math","Physics","Chemistry","English","CS"],
-      data:   [81,78,84,88,92]
-    };
+  <main> <!-- Line 22 -->
+    <h1>Welcome to the Admin Dashboard</h1> <!-- Line 23 -->
+    <p>This page demonstrates <strong>navigation</strong>, <strong>responsiveness</strong>, and <strong>accessibility compliance</strong>.</p> <!-- Line 24 -->
+    <img src="https://via.placeholder.com/600x300" alt="Dashboard Preview Image"> <!-- Line 25 -->
+  </main> <!-- Line 26 -->
 
-    (async () => {
-      const attendance = await loadJSON("/api/attendance", attendanceFallback);
-      const marks      = await loadJSON("/api/marks",      marksFallback);
+  <footer> <!-- Line 27 -->
+    <p>&copy; 2025 Admin Dashboard. All rights reserved.</p> <!-- Line 28 -->
+  </footer> <!-- Line 29 -->
 
-      // Attendance (line chart)
-      new Chart(document.getElementById("attendanceChart"), {
-        type: "line",
-        data: {
-          labels: attendance.labels,
-          datasets: [{
-            label: "Attendance (%)",
-            data: attendance.data,
-            fill: false,
-            tension: 0.35
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: { y: { beginAtZero: true, suggestedMax: 100 } }
-        }
-      });
-
-      // Marks (bar chart)
-      new Chart(document.getElementById("marksChart"), {
-        type: "bar",
-        data: {
-          labels: marks.labels,
-          datasets: [{ label: "Avg Marks", data: marks.data }]
-        },
-        options: {
-          responsive: true,
-          scales: { y: { beginAtZero: true, suggestedMax: 100 } }
-        }
-      });
-    })();
-  </script>
-</body>
-</html>
+  <script src="script.js"></script> <!-- Line 30 -->
+</body> <!-- Line 31 -->
+</html> <!-- Line 32 -->
